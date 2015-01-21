@@ -1,4 +1,6 @@
 <?php
+
+/*
 function exception_error_handler($errno, $errstr, $errfile, $errline ) {
      throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
   }
@@ -9,6 +11,11 @@ try {
 } catch(Exception $e) {
    echo "Stripe.php not loaded / not found!";
 }
+*/
+
+
+require('https://dev-stripe.herokuapp.com/Stripe.php');
+
 
 //require(dirname(__FILE__) . '/Stripe.php');
 
