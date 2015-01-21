@@ -1,5 +1,5 @@
 <?php
-require(dirname(__FILE__) . '/Stripe.php');
+require(dirname(__FILE__) . 'Stripe.php');
 
 if ($_POST) {
   Stripe::setApiKey("sk_test_udw56z4V1NbZNOdNWDrDNfdK");
