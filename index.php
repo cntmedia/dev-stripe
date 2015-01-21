@@ -12,7 +12,7 @@ try {
 }
 */
 
-require('https://dev-stripe.herokuapp.com/Stripe.php');
+include('/app/Stripe.php');
 
 //require(dirname(__FILE__) . '/Stripe.php');
 
