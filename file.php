@@ -1,3 +1,3 @@
 <?
-echo(dirname(__FILE__) . 'Stripe.php');
+echo(dirname(__FILE__) . '/Stripe.php');
 ?>
