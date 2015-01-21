@@ -1,5 +1,5 @@
 <?php
-require 'Stripe.php';
+require 'path-to-Stripe.php';
 
 if ($_POST) {
   Stripe::setApiKey("sk_test_udw56z4V1NbZNOdNWDrDNfdK");
@@ -8,7 +8,9 @@ if ($_POST) {
   try {
     if (!isset($_POST['stripeToken']))
       throw new Exception("The Stripe Token was not generated correctly");
-    Stripe_Charge::create(array("amount" => 1000,
+
+    $amount = (float)$_POST['amount'] * 100;
+    Stripe_Charge::create(array("amount" => $amount,
                                 "currency" => "usd",
                                 "card" => $_POST['stripeToken']));
     $success = 'Your payment was successful.';
@@ -53,7 +55,7 @@ if ($_POST) {
                 $("#payment-form").submit(function(event) {
                     // disable the submit button to prevent repeated clicks
                     $('.submit-button').attr("disabled", "disabled");
-                    var chargeAmount = 1000; //amount you want to charge, in cents. 1000 = $10.00, 2000 = $20.00 ...
+                    var chargeAmount = parseFloat($('.payment-amount').val())*100; //amount you want to charge, in cents. 1000 = $10.00, 2000 = $20.00 ...
                     // createToken returns immediately - the supplied callback submits the form if there are no errors
                     Stripe.createToken({
                         number: $('.card-number').val(),
@@ -67,7 +69,7 @@ if ($_POST) {
         </script>
     </head>
     <body>
-        <h1>Charge $10 with Stripe</h1>
+        <h1>Charge a CC with Stripe</h1>
         <!-- to display errors returned by createToken -->
         <span class="payment-errors"><?= $error ?></span>
         <span class="payment-success"><?= $success ?></span>
@@ -85,6 +87,10 @@ if ($_POST) {
                 <input type="text" size="2" class="card-expiry-month"/>
                 <span> / </span>
                 <input type="text" size="4" class="card-expiry-year"/>
+            </div>
+            <div class="form-row">
+                <label>Amount (for eg. 4.45)</label>
+                <input type="text" name="amount" size="2" class="payment-amount"/>
             </div>
             <button type="submit" class="submit-button">Submit Payment</button>
         </form>
