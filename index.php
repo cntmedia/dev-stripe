@@ -1,19 +1,6 @@
 <?php
-/*
-function exception_error_handler($errno, $errstr, $errfile, $errline ) {
-     throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
-  }
-  set_error_handler("exception_error_handler");
-
-try {
-    include 'Stripe.php';
-} catch(Exception $e) {
-   echo "Stripe.php not loaded / not found!";
-}
-*/
-
-include('/app/Stripe.php');
-
+require('/app/stripe.php');
+require('/app/include.php');
 //require(dirname(__FILE__) . '/Stripe.php');
 
 if ($_POST) {
