@@ -1,5 +1,11 @@
 <?php
-require(dirname(__FILE__) . '/Stripe.php');
+try {
+    include 'Stripe.php';
+} catch(Exception $e) {
+   echo "Stripe.php not loaded / not found!";
+}
+
+//require(dirname(__FILE__) . '/Stripe.php');
 
 if ($_POST) {
   Stripe::setApiKey("sk_test_udw56z4V1NbZNOdNWDrDNfdK");
