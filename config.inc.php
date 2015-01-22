@@ -1,12 +1,14 @@
-<?php # config.inc.php
-// Created by Larry Ullman, www.larryullman.com, @LarryUllman
-// Posted as part of the series "Processing Payments with Stripe"
-// http://www.larryullman.com/series/processing-payments-with-stripe/
-// Last updated February 20, 2013
+<?
 
-// This page sets some global properties and defines one or more functions.
-// This page is intended to be stored in a protected "includes" directory.
+require_once('./lib/Stripe.php');
 
-// Define useful constants:
+$stripe = array(
+  "secret_key"      => "sk_test_BQokikJOvBiI2HlWgH4olfQ2",
+  "publishable_key" => "pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+);
+
+Stripe::setApiKey($stripe['secret_key']);
+?>
+
 define('STRIPE_PRIVATE_KEY', 'sk_test_udw56z4V1NbZNOdNWDrDNfdK');
 define('STRIPE_PUBLIC_KEY', 'pk_test_WJ5z2yZl5ELiyNlhJ1swpxoT');
