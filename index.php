@@ -2,8 +2,8 @@
 define('ROOT_DIR',dirname(__FILE__));
 $root_directory = $_SERVER['DOCUMENT_ROOT'];
 include($root_directory."/config.php");
-include($root_directory."/stripe/include01.php");
-include($root_directory."/stripe/Stripe/include02.php");
+include($root_directory."/include/include01.php");
+include($root_directory."/include/stripe/include02.php");
 
 ?>
 <!doctype html>
