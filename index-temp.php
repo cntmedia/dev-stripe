@@ -1,9 +1,8 @@
 <?php
+
 define('ROOT_DIR',dirname(__FILE__));
 $root_directory = $_SERVER['DOCUMENT_ROOT'];
 include($root_directory."/config.php");
-include($root_directory."/stripe/include01.php");
-include($root_directory."/stripe/Stripe/include02.php");
 
 ?>
 <!doctype html>
@@ -16,20 +15,13 @@ include($root_directory."/stripe/Stripe/include02.php");
 </head>
 <body>
 
-<h1>
-<?php echo $root_direectory;?>
-</h1>
-</br>
-</br>
-<h1>
-<?php testFunctionA();?>
-</h1>
-</br>
-</br>
-<h1>
-<?php testFunctionB();?>
-</h1>
-
-
+<form action="charge.php" method="post">
+  <script src="https://checkout.stripe.com/checkout.js" 
+        class="stripe-button"
+        data-key="<?php echo $stripe['publishable_key']; ?>"
+        data-amount="5000" 
+        data-description="One widget">
+    </script>
+</form>
 </body>
 </html>
