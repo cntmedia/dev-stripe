@@ -6,7 +6,8 @@
 //define('ROOT_DIR',dirname(__FILE__));
 //$root_directory = $_SERVER['DOCUMENT_ROOT'];
 
-require_once('lib/Stripe.php');
+//require_once('lib/Stripe.php');
+require_once('/app/lib/Stripe.php');
 Stripe::setApiKey("sk_test_udw56z4V1NbZNOdNWDrDNfdK");
 
 if(isset($_POST)) {
