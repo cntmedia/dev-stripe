@@ -31,8 +31,7 @@ if(isset($_POST)) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Stripe Checkout - <?php testFunctionB();?>
-</title>
+<title>Stripe - Test</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </head>
