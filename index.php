@@ -10,24 +10,25 @@ include($root_directory."/include/stripe/include02.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Stripe Checkout</title>
+<title>Stripe Checkout - <?php testFunctionB();?>
+</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </head>
 <body>
 
 <h1>
-<?php echo $root_direectory;?>
-</h1>
-</br>
-</br>
-<h1>
-<?php testFunctionA();?>
+<?php echo($root_direectory);?>
 </h1>
 </br>
 </br>
 <h1>
 <?php testFunctionB();?>
+</h1>
+</br>
+</br>
+<h1>
+<?php testFunctionA();?>
 </h1>
 
 
